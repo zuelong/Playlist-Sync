@@ -1,0 +1,11 @@
+<h1>Your Current Playlists</h1>
+<ul>
+<% @spotify_user.playlists.each do |playlist| %>
+  <li><%= playlist.name %></li>
+  <ul>
+  <% playlist.tracks.each do |track| %><br>
+        <li><%= track.name %> - <%= track.artists[0].name %></li>
+  <% end %>
+  </ul>
+<% end %>
+</ul>

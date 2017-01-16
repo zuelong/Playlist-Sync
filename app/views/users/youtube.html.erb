@@ -1,0 +1,13 @@
+<h1>Your Current Playlists</h1>
+<ul>
+<% @youtube_user.playlists.each do |playlist| %>
+  <li>
+  <%= playlist.title %>
+      <ul>
+        <% playlist.playlist_items.each do |video| %>
+          <li><%= video.title %></li>
+        <% end %>
+      </ul>
+  </li>
+<% end %>
+</ul>
