@@ -9,6 +9,25 @@
   </head>
 
   <body>
+  <h3>Navigation</h3>
+  <ul>
+    <li>
+      <% if !session[:spotify_token].nil? %>
+        <%= link_to 'Your Spotify Playlists', '/spotify' %>
+      <% else %>
+        <%= link_to 'Login to Spotify', '/auth/spotify' %>
+      <% end %>
+    </li>
+    <li>
+      <% if !session[:youtube_token].nil? %>
+          <%= link_to 'Your Youtube Playlists', '/youtube' %>
+      <% else %>
+          <%= link_to 'Login to Youtube', '/auth/google_oauth2' %>
+      <% end %>
+    </li>
+  </ul>
+  <%= button_to 'Sync Your Playlists', '/sync' if !session[:youtube_token].nil? and !session[:spotify_token].nil?%>
+  <h3>Content</h3>
     <%= yield %>
   </body>
 </html>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'users#youtube'
   get '/youtube', to: 'users#youtube'
   get '/spotify', to: 'users#spotify'
+  post '/sync', to: 'users#sync'
 
   root 'home#index'
 end
