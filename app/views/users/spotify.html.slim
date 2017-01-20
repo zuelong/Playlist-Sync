@@ -1,0 +1,10 @@
+h1 Your Current Spotify Playlists
+
+ul
+  - @spot.playlists.each do |playlist|
+    li
+      = playlist.name
+    ul
+      - playlist.tracks.each do |track|
+        li
+          = "#{track.name} - #{track.artists[0].name}"
