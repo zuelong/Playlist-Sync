@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title PlaylistSync
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+
+  body
+    h3 Navigation
+    ul
+      li
+        - if !session[:spotify_token].nil?
+          = link_to 'Your Spotify Playlists', '/spotify'
+        - else
+          = link_to 'Login to Spotify', '/auth/spotify'
+      li
+        - if !session[:youtube_token].nil?
+          = link_to 'Your Youtube Playlists', '/youtube'
+        - else
+          = link_to 'Login to Youtube', '/auth/google_oauth2'
+    = button_to 'Sync Your Playlists', '/sync' if !session[:youtube_token].nil? and !session[:spotify_token].nil?
+    h3 Content
+    = yield
+

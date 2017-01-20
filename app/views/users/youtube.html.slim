@@ -1,0 +1,10 @@
+h1 Your Current Youtube Playlists
+
+ul
+  - @yt.playlists.each do |playlist|
+    li
+      = playlist.title
+    ul
+      - playlist.playlist_items.each do |video|
+        li
+          = video.title
