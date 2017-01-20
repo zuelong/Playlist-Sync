@@ -58,3 +58,6 @@ gem 'rspotify'
 #Add support for YouTube
 gem 'yt'
 gem 'omniauth-google-oauth2'
+
+#Adding in Bootstrap
+gem 'bootstrap-sass'

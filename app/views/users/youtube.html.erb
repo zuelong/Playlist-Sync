@@ -1,6 +1,7 @@
-<h1>Your Current Playlists</h1>
+<h1>Your Current Youtube Playlists</h1>
+
 <ul>
-<% @youtube_user.playlists.each do |playlist| %>
+<% @yt.playlists.each do |playlist| %>
   <li>
   <%= playlist.title %>
       <ul>
