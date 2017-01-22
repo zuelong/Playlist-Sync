@@ -61,3 +61,6 @@ gem 'omniauth-google-oauth2'
 
 #Adding in Bootstrap
 gem 'bootstrap-sass'
+
+#Adding slim gem for simpler template design
+gem 'slim'
